@@ -16,6 +16,9 @@ public class SecondActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
+		Log.d("SecondActivity", "Task id is"+ getTaskId());
+		
+		//Log.d("SecondActivity",this.toString());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.second_layout);
 		
@@ -30,13 +33,25 @@ public class SecondActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent();
-				intent.putExtra("data_return", "Hello FirstActivity");
-				setResult(RESULT_OK, intent);
-				finish();
+//				Intent intent = new Intent();
+//				intent.putExtra("data_return", "Hello FirstActivity");
+//				setResult(RESULT_OK, intent);
+//				finish();
+				
+				Intent intent = new Intent(SecondActivity.this,ThirdActivity.class);
+				startActivity(intent);
 			}
 		});
 		
 		
 	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		
+		Log.d("SecondActivity", "onDestroy");
+	}
+	
 }

@@ -28,6 +28,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		Log.d("FirstActivity", "Task id is" + getTaskId());
+		Log.d("FirstActivity","s");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉顶部标题栏
 		setContentView(R.layout.activity_main);
 		
@@ -49,6 +51,8 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				
+				Log.d("FirstActivity","s");
 				// TODO Auto-generated method stub
 				//Toast.makeText(MainActivity.this,"you clicked button1",Toast.LENGTH_SHORT).show();
 				
@@ -76,13 +80,26 @@ public class MainActivity extends Activity {
 //				intent.putExtra("extra_data", data);
 //				startActivity(intent);
 				
-				Intent intent  = new Intent(MainActivity.this,SecondActivity.class);
-				startActivityForResult(intent, 1);//请求码只要是唯一的就行。
+//				Intent intent  = new Intent(MainActivity.this,SecondActivity.class);
+//				startActivityForResult(intent, 1);//请求码只要是唯一的就行。
+				
+				//Intent intent = new Intent(MainActivity.this,MainActivity.class);
+				
+				Intent intent =new Intent(MainActivity.this,SecondActivity.class);
+				startActivity(intent);
+				
 				
 			}
 		});
 		
 
+	}
+	
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		Log.d("FirstActivity", "onRestart");
 	}
 	
 	@Override
