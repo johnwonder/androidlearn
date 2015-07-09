@@ -13,8 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 import android.os.Build;
 
 public class MainActivity extends  Activity {
@@ -29,24 +32,24 @@ public class MainActivity extends  Activity {
 		Fruit apple = new Fruit("Apple",1);
 		fruitList.add(apple);
 		 
-//		Fruit banana = new Fruit("Banana", R.drawable.banana_pic);
-//		fruitList.add(banana);
-//		Fruit orange = new Fruit("Orange", R.drawable.orange_pic);
-//		fruitList.add(orange);
-//		Fruit watermelon = new Fruit("Watermelon", R.drawable.watermelon_pic);
-//		fruitList.add(watermelon);
-//		Fruit pear = new Fruit("Pear", R.drawable.pear_pic);
-//		fruitList.add(pear);
-//		Fruit grape = new Fruit("Grape", R.drawable.grape_pic);
-//		fruitList.add(grape);
-//		Fruit pineapple = new Fruit("Pineapple", R.drawable.pineapple_pic);
-//		fruitList.add(pineapple);
-//		Fruit strawberry = new Fruit("Strawberry", R.drawable.strawberry_pic);
-//		fruitList.add(strawberry);
-//		Fruit cherry = new Fruit("Cherry", R.drawable.cherry_pic);
-//		fruitList.add(cherry);
-//		Fruit mango = new Fruit("Mango", R.drawable.mango_pic);
-//		fruitList.add(mango);
+		Fruit banana = new Fruit("Banana", R.drawable.banana_pic);
+		fruitList.add(banana);
+		Fruit orange = new Fruit("Orange", R.drawable.orange_pic);
+		fruitList.add(orange);
+		Fruit watermelon = new Fruit("Watermelon", R.drawable.watermelon_pic);
+		fruitList.add(watermelon);
+		Fruit pear = new Fruit("Pear", R.drawable.pear_pic);
+		fruitList.add(pear);
+		Fruit grape = new Fruit("Grape", R.drawable.grape_pic);
+		fruitList.add(grape);
+		Fruit pineapple = new Fruit("Pineapple", R.drawable.pineapple_pic);
+		fruitList.add(pineapple);
+		Fruit strawberry = new Fruit("Strawberry", R.drawable.strawberry_pic);
+		fruitList.add(strawberry);
+		Fruit cherry = new Fruit("Cherry", R.drawable.cherry_pic);
+		fruitList.add(cherry);
+		Fruit mango = new Fruit("Mango", R.drawable.mango_pic);
+		fruitList.add(mango);
 	}
 	
 	@Override
@@ -59,6 +62,17 @@ public class MainActivity extends  Activity {
 		ListView listView  = (ListView) findViewById(R.id.list_view);
 		listView.setAdapter(adapter);
 		
+		//添加点击事件
+		listView.setOnItemClickListener(new OnItemClickListener() {
+			
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				Fruit fruit = fruitList.get(position);
+				Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();
+			}
+		});
 		
 //		ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
 //				android.R.layout.simple_list_item_1,data
