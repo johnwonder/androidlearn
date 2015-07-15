@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,9 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.os.Build;
 
-public class MainActivity extends  Activity {
+public class MainActivity extends  Activity  implements OnClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +25,28 @@ public class MainActivity extends  Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 
-		 
+		Button button = (Button) findViewById(R.id.button);
+		button.setOnClickListener(this);
+		
+	}
+	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.button:
+//			AnotherRightFragment fragment = new AnotherRightFragment();
+//			FragmentManager fragmentManager = getFragmentManager();
+//			FragmentTransaction transaction = fragmentManager.beginTransaction();
+//			transaction.replace(R.id.right_layout, fragment);
+//			
+//			transaction.addToBackStack(null);
+//			transaction.commit();
+			break;
+
+		default:
+			break;
+		}
 	}
 
 	@Override

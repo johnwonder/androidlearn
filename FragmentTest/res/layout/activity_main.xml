@@ -1,10 +1,10 @@
-<RelativeLayout
+ <!-- <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
     
-    <fragment 
+   <fragment 
         
         android:id="@+id/id_fragment_title"
         android:name="com.example.fragmenttest.TitleFragment"
@@ -26,5 +26,24 @@
         android:name="com.example.fragmenttest.ContentFragment"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        /> 
+</RelativeLayout>-->
+
+
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <fragment 
+        android:id="@+id/left_fragment"
+        android:name="com.example.fragmenttest.LeftFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
-</RelativeLayout>
+     
+   
+    
+</LinearLayout>
+
+
